@@ -1,0 +1,72 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Admin.master.cs" Inherits="Admin" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <style>
+   
+        .auto-style1 {
+            font-size: large;
+        }
+   
+    </style>
+    <title></title>
+    <link href="Bootstrap/css/bootstrap.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+       <div style="height: 150px; width: 700px; margin-left: 300px;" >
+           <asp:Image ID="Image1" runat="server" Height="150px" Width="700px" ImageUrl="~/Resimler/admin.jpg" />
+       </div>
+            
+        
+
+        
+        <div class="container-fluid" style="margin-top:50px;">
+            <div class="row">
+                <div class="col-3">
+                    
+                    <div class="list-group" style="margin-top:50px;">
+ 
+  
+                        <div class=" list-group-item list-group-item-action text-center">
+                            <strong><span class="auto-style1">MENÜLER</span></strong></div>
+                      
+ <a href="#" class="list-group-item list-group-item-action">KATEGORİLER</a>
+  <a href="#" class="list-group-item list-group-item-action">YEMEKLER</a>
+  <a href="#" class="list-group-item list-group-item-action">YORUMLAR</a>
+                         <a href="#" class="list-group-item list-group-item-action">MESAJLAR</a>
+                         <a href="#" class="list-group-item list-group-item-action">GÜNÜN YEMEĞİ</a>
+                         <a href="#" class="list-group-item list-group-item-action">TARİFLER</a>
+                         <a href="#" class="list-group-item list-group-item-action">HAKKIMIZDA</a>
+</div>
+                    
+                    </div>
+                <div class="col-9" style="  background-color:black;">er</div>
+            </div>
+        </div>
+
+
+        
+
+
+
+
+
+
+        <%--<div>--%>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+       <%-- </div>--%>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</body>
+</html>

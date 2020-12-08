@@ -1,0 +1,171 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    <style type="text/css">
+    .auto-style1 {
+        width: 100%;
+        max-width: 1140px;
+        min-width: 992px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+    .fa {
+        padding: 1px;
+        font-size: 17px;
+        width: 30px;
+        text-align: center;
+        text-decoration: none;
+        margin: 0px 1px;
+        border-radius: 50%;
+    }
+
+        .fa:hover {
+            opacity: 0.7;
+        }
+
+    }
+</style>
+    <asp:contentplaceholder id="head" runat="server"> 
+
+    </asp:contentplaceholder>
+
+</head>
+
+
+
+
+    
+<body>
+
+    
+    <form id="form1" runat="server">
+        <div id="header">
+            <nav class="navbar navbar-expand navbar-dark justify-content-end" style="background-color: #95b5ac;">
+                <ul class="navbar-nav">
+                    <li class="nav-item ">
+                        <a class="nav-link fa fa-facebook" href="#"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fa fa-twitter" href="#"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fa fa-instagram" href="#"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fa fa-pinterest" href="#"></a>
+                    </li>
+                </ul>
+            </nav>
+            <div  class="medium-header-container " style="text-align: center;">      
+            <asp:Image ID="Image1" runat="server" ImageUrl="~/Logo/Steinfieldd.png" Width="200px" />     
+            </div>   
+        </div>
+       
+        <br />
+        <br />
+
+       
+
+        <div class="container">
+            <nav class="navbar navbar-expand-md navbar-light sticky-top" style="border-style: ridge; border-width: thin; border-color: #808080 #FFFFFF #808080 #FFFFFF; background-color: white;">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="AnaSayfa.aspx"><span class="auto-style1">ANA SAYFA</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">KATEGORİLER
+                            </a>
+                            <asp:DataList ID="DataList1" runat="server" CssClass="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <ItemTemplate>
+                                    <a href="KategoriDetay.aspx?Kategoriid=<%# Eval("Kategoriid") %>" class="dropdown-item ">
+                                        <asp:Label ID="Label1" runat="server" Text='<%# Eval("KategoriAd") %>' CssClass="dropdown-item"></asp:Label>
+                                </ItemTemplate>
+                            </asp:DataList>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="GununYemegi.aspx"><span class="auto-style1">GÜNÜN YEMEĞİ</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="TarifOner.aspx"><span class="auto-style1">TARİF ÖNER</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Hakkimizda.aspx"><span class="auto-style1">HAKKIMIZDA</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="iletisim.aspx"><span class="auto-style1">İLETİŞİM</span></a>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+
+    <div class="container">
+<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+
+
+
+        <div id="footer">
+            <nav class="navbar navbar-expand navbar-light justify-content-center" style="background-color: #95b5ac; margin-top: 50px;">
+                <ul class="navbar-nav">
+                    <li class="nav-item ">
+                        <a class="nav-link fa fa-facebook" href="#"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fa fa-twitter" href="#"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fa fa-instagram" href="#"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fa fa-pinterest" href="#"></a>
+                    </li>
+                </ul>
+                </nav>
+        </div>
+
+        <div id="footerend">
+            <nav class="navbar navbar-light bg-light justify-content-center">
+                <span class="navbar-text">Copyright © 2020. Created By FATMA CAFRI</span>
+
+            </nav>
+        </div>
+        
+
+
+    </form>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</body>
+</html>
