@@ -4,87 +4,78 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Steinfield Recipies</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 
     <style type="text/css">
-    .auto-style1 {
-        width: 100%;
-        max-width: 1140px;
-        min-width: 992px;
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-    .clearfix::after {
-        content: "";
-        clear: both;
-        display: table;
-    }
-    .fa {
-        padding: 1px;
-        font-size: 17px;
-        width: 30px;
-        text-align: center;
-        text-decoration: none;
-        margin: 0px 1px;
-        border-radius: 50%;
-    }
-
-        .fa:hover {
-            opacity: 0.7;
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
         }
 
-    }
-</style>
-    <asp:contentplaceholder id="head" runat="server"> 
+        .fa {
+            padding: 1px;
+            font-size: 17px;
+            width: 30px;
+            text-align: center;
+            text-decoration: none;
+            margin: 0px 1px;
+            border-radius: 50%;
+        }
 
-    </asp:contentplaceholder>
+            .fa:hover {
+                opacity: 0.7;
+            }
+                     
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
 
 </head>
 
-
-
-
-    
 <body>
-
-    
+     
     <form id="form1" runat="server">
-        <div id="header">
-            <nav class="navbar navbar-expand navbar-dark justify-content-end" style="background-color: #95b5ac;">
-                <ul class="navbar-nav">
+
+
+        <div id="header clearfix">
+            <nav class="navbar navbar-expand navbar-dark justify-content-between" style="background-color: #95b5ac;">
+                <div class="form-inline ">
+                    <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control mr-sm-2 rounded-pill" placeholder="Ara..." OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+                </div>
+
+        
+                <%--<ul class="navbar-nav">               
                     <li class="nav-item ">
-                        <a class="nav-link fa fa-facebook" href="#"></a>
+                        <a class="nav-link fa fa-linkedin " href="https://www.linkedin.com/in/fatma-cafri-40b789173/"></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fa fa-twitter" href="#"></a>
+                        <a class="nav-link fa fa-medium" href="https://medium.com/@fatmacafri.1"></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fa fa-instagram" href="#"></a>
+                        <a class="nav-link fa fa-github" href="https://github.com/fatmacafri"></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fa fa-pinterest" href="#"></a>
+                        <a class="nav-link fa fa-google" href="https://www.google.com.tr/"></a>
                     </li>
-                </ul>
+                </ul>--%>
+                <asp:Button ID="Button1" runat="server" Text="Giriş Yap" CssClass="btn btn-success rounded-pill" OnClick="Button1_Click"/>
             </nav>
-            <div  class="medium-header-container " style="text-align: center;">      
-            <asp:Image ID="Image1" runat="server" ImageUrl="~/Logo/Steinfieldd.png" Width="200px" />     
-            </div>   
+
+            <div class="medium-header-container " style="text-align: center; margin-top: 20px">
+                <asp:Image ID="Image1" runat="server" ImageUrl="~/Logo/Steinfieldd.png" Height="100px" />
+            </div>
         </div>
-       
-        <br />
         <br />
 
-       
+
 
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-light sticky-top" style="border-style: ridge; border-width: thin; border-color: #808080 #FFFFFF #808080 #FFFFFF; background-color: white;">
@@ -94,7 +85,7 @@
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item ">
-                            <a class="nav-link" href="AnaSayfa.aspx"><span class="auto-style1">ANA SAYFA</span></a>
+                            <a class="nav-link" href="AnaSayfa.aspx">ANA SAYFA</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">KATEGORİLER
@@ -107,16 +98,16 @@
                             </asp:DataList>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="GununYemegi.aspx"><span class="auto-style1">GÜNÜN YEMEĞİ</span></a>
+                            <a class="nav-link" href="GununYemegi.aspx">GÜNÜN YEMEĞİ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="TarifOner.aspx"><span class="auto-style1">TARİF ÖNER</span></a>
+                            <a class="nav-link" href="TarifOner.aspx">TARİF ÖNER</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Hakkimizda.aspx"><span class="auto-style1">HAKKIMIZDA</span></a>
+                            <a class="nav-link" href="Hakkimizda.aspx">HAKKIMIZDA</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="iletisim.aspx"><span class="auto-style1">İLETİŞİM</span></a>
+                            <a class="nav-link" href="iletisim.aspx">İLETİŞİM</a>
                         </li>
 
                     </ul>
@@ -125,47 +116,34 @@
         </div>
 
 
-    <div class="container">
-<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        </asp:ContentPlaceHolder>
-    </div>
-
-
+        <div class="container">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
 
         <div id="footer">
-            <nav class="navbar navbar-expand navbar-light justify-content-center" style="background-color: #95b5ac; margin-top: 50px;">
+            <nav class="navbar navbar-expand navbar-light justify-content-center" style="background-color: #95b5ac; margin-top: 27px;">
                 <ul class="navbar-nav">
                     <li class="nav-item ">
-                        <a class="nav-link fa fa-facebook" href="#"></a>
+                        <a class="nav-link fa fa-linkedin" href="https://www.linkedin.com/in/fatma-cafri-40b789173/"></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fa fa-twitter" href="#"></a>
+                        <a class="nav-link fa fa-medium" href="https://medium.com/@fatmacafri.1"></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fa fa-instagram" href="#"></a>
+                        <a class="nav-link fa fa-github" href="https://github.com/fatmacafri"></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fa fa-pinterest" href="#"></a>
+                        <a class="nav-link fa fa-google" href="https://www.google.com.tr/"></a>
                     </li>
                 </ul>
-                </nav>
-        </div>
-
-        <div id="footerend">
-            <nav class="navbar navbar-light bg-light justify-content-center">
-                <span class="navbar-text">Copyright © 2020. Created By FATMA CAFRI</span>
-
             </nav>
         </div>
-        
-
-
+        <div id="footerend">
+            <nav class="navbar navbar-light bg-light justify-content-center">
+                <span class="navbar-text">Created by FATMA CAFRI</span>
+            </nav>
+        </div>
     </form>
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 </body>
 </html>

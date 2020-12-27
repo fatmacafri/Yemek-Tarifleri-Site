@@ -11,14 +11,15 @@
 
                 <asp:DataList ID="DataList1" runat="server">
                     <ItemTemplate>
+                        <div class="card-title text-center">
+                            <strong>
+                                <asp:Label ID="Label1" runat="server"  Text='<%# Eval("YemekAd") %>'></asp:Label>
+                            </strong>
+                        </div>
                         <div class="text-center">
-                            <asp:Image ID="Image1" runat="server" Height="250px" ImageUrl='<%# Eval("YemekResim") %>' Width="400px" />
+                            <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("YemekResim") %>' Width="75%" />
                             <div class="card-body">
-                                <div class="card-title">
-                                    <strong>
-                                        <asp:Label ID="Label1" runat="server" CssClass="auto-style1" Text='<%# Eval("YemekAd") %>'></asp:Label>
-                                    </strong>
-                                </div>
+
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item">
                                         <p class="card-text">
@@ -34,9 +35,9 @@
                                     </li>
                                     <li class="list-group-item">
                                         <p class="card-text">
-                                            <medium class="text-muted">
-        Puan:<asp:Label ID="Label4" runat="server" Text='<%# Eval("YemekPuan") %>'></asp:Label>&nbsp;- EklenmeTarihi: 
-        <asp:Label ID="Label5" runat="server" Text='<%# Eval("YemekTarih") %>'></asp:Label></medium>
+                                            <small class="text-muted">
+        Puan:<asp:Label ID="Label4" runat="server" Text='<%# Eval("YemekPuan") %>' CssClass="card-text"></asp:Label>&nbsp;- EklenmeTarihi: 
+        <asp:Label ID="Label5" runat="server" Text='<%# Eval("YemekTarih") %>' CssClass="card-text"></asp:Label></small>
                                         </p>
                                     </li>
                                 </ul>

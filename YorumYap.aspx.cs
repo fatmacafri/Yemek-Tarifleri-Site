@@ -29,12 +29,15 @@ public partial class YorumYap : System.Web.UI.Page
 
     protected void Button1_Click1(object sender, EventArgs e)
     {
-        SqlCommand komut = new SqlCommand("insert into Tbl_Yorumlar (YorumAdSoyad,YorumMail,Yorumicerik,Yemekid) values (@p1,@p2,@p3,@p4)", bgl.baglanti());
-        komut.Parameters.AddWithValue("@p1", Txt_Gonderen.Text);
-        komut.Parameters.AddWithValue("@p2", Txt_Mail.Text);
-        komut.Parameters.AddWithValue("@p3", Txt_Mesaj.Text);
-        komut.Parameters.AddWithValue("@p4", Yemekid);
-        komut.ExecuteNonQuery();
-        bgl.baglanti().Close();
+
+
+
+        //SqlCommand komut = new SqlCommand("insert into Tbl_Yorumlar (YorumAdSoyad,YorumMail,Yorumicerik,Yemekid) values (@p1,@p2,@p3,@p4)", bgl.baglanti());
+        //komut.Parameters.AddWithValue("@p1", Txt_Gonderen.Text);
+        //komut.Parameters.AddWithValue("@p2", Txt_Mail.Text);
+        //komut.Parameters.AddWithValue("@p3", Txt_Mesaj.Text);
+        //komut.Parameters.AddWithValue("@p4", Yemekid);
+        //komut.ExecuteNonQuery();
+        //bgl.baglanti().Close();
     }
 }

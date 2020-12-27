@@ -24,5 +24,12 @@ public partial class iletisim : System.Web.UI.Page
         komut.Parameters.AddWithValue("@p4", Txt_Mesaj.Text);
         komut.ExecuteNonQuery();
         bgl.baglanti().Close();
+        Response.Write("<script lang='JavaScript'>alert('Mesajınız alınmıştır.');</script>");
+
+        Txt_Gonderen.Text = string.Empty;
+        Txt_Mail.Text = string.Empty;
+        Txt_Baslik.Text = string.Empty;
+        Txt_Mesaj.Text = string.Empty;
+
     }
 }

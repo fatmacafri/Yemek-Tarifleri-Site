@@ -41,10 +41,7 @@
                 </div>
 
 
-                <div class="text-center">
-                    <asp:Button ID="Button1" runat="server" Text="Yorum Yap" class="btn btn-success" OnClick="Button1_Click1" />
-                </div>
-                <br />
+               
             </div>
             <div class="col-md-2"></div>
         </div>

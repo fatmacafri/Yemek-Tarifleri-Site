@@ -35,5 +35,23 @@ public partial class TarifDetay : System.Web.UI.Page
         SqlDataReader dr3 = komut3.ExecuteReader();
         DataList3.DataSource = dr3;
         DataList3.DataBind();
+
+
+    }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        SqlCommand komut = new SqlCommand("insert into Tbl_Yorumlar (YorumAdSoyad,YorumMail,Yorumicerik,Yemekid) values (@p1,@p2,@p3,@p4)", bgl.baglanti());
+        komut.Parameters.AddWithValue("@p1", Txt_Gonderen.Text);
+        komut.Parameters.AddWithValue("@p2", Txt_Mail.Text);
+        komut.Parameters.AddWithValue("@p3", Txt_Mesaj.Text);
+        komut.Parameters.AddWithValue("@p4", Yemekid);
+        komut.ExecuteNonQuery();
+        bgl.baglanti().Close();
+
+        Txt_Gonderen.Text = string.Empty;
+        Txt_Mail.Text= string.Empty;
+        Txt_Mesaj.Text= string.Empty;
+        
     }
 }

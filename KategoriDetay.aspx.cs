@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Data;
 
 public partial class KategoriDetay : System.Web.UI.Page
 {
@@ -13,11 +14,14 @@ public partial class KategoriDetay : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        kategoriid = Request.QueryString["Kategoriid"];
-        SqlCommand komut = new SqlCommand("Select * From Tbl_Yemekler where kategoriid=@p1", bgl.baglanti());
-        komut.Parameters.AddWithValue("@p1", kategoriid);
-        SqlDataReader dr = komut.ExecuteReader();
-        DataList1.DataSource = dr;
-        DataList1.DataBind();
+        
+            kategoriid = Request.QueryString["Kategoriid"];
+            SqlCommand komut = new SqlCommand("Select * From Tbl_Yemekler where kategoriid=@p1", bgl.baglanti());
+            komut.Parameters.AddWithValue("@p1", kategoriid);
+            SqlDataReader dr = komut.ExecuteReader();
+            DataList1.DataSource = dr;
+            DataList1.DataBind();
     }
+
+    
 }

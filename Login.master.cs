@@ -5,14 +5,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-
-public partial class AnaSayfa : System.Web.UI.Page
+public partial class Login : System.Web.UI.MasterPage
 {
-    
-    
     protected void Page_Load(object sender, EventArgs e)
     {
-        
-    }
 
+    }
 }

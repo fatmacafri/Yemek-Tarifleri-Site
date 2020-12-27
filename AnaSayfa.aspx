@@ -13,7 +13,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
-    <div class="container" style="margin-top:40px ">
+    <div class="container" style="margin-top:30px ">
         <div class="row">
             <div class="col-3"></div>
             <div class="col-6">
@@ -28,22 +28,22 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active" style="text-align: center">
-                            <img src="/Pastalar/1.jpg" alt="First slide">
+                            <asp:Image ID="Image1" runat="server" ImageUrl="~/resim/pasta1.jpg" alt="First slide" Width="100%" /> 
                         </div>
                         <div class="carousel-item">
-                            <img src="/Tatlılar/1.jpg" alt="Second slide">
+                            <asp:Image ID="Image2" runat="server" ImageUrl="~/resim/tatlı1.jpg" alt="Second slide" Width="100%"/> 
                         </div>
                         <div class="carousel-item">
-                            <img src="/İçecekler/1.jpg" alt="Third slide">
+                            <asp:Image ID="Image3" runat="server" ImageUrl="~/resim/icecek1.jpg" alt="Third slide" Width="100%"/> 
                         </div>
                         <div class="carousel-item">
-                            <img src="/Et Yemekleri/1.jpg" alt="Third slide">
+                            <asp:Image ID="Image4" runat="server" ImageUrl="~/resim/et2.jpg" alt="Fourth slide" Width="100%"/> 
                         </div>
                         <div class="carousel-item">
-                            <img src="/Sebze Yemekleri/1.jpg" alt="Third slide">
+                            <asp:Image ID="Image5" runat="server" ImageUrl="~/resim/sebze4.jpg" alt="Fifth slide" Width="100%"/>  
                         </div>
                         <div class="carousel-item">
-                            <img src="/Çorbalar/1.jpg" alt="Third slide">
+                            <asp:Image ID="Image6" runat="server" ImageUrl="~/resim/corba1.jpg" alt="Sixth slide" Width="100%"/> 
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
@@ -58,7 +58,7 @@
 
             </div>
             
-            <div class="col-3"></div>
+           <div class="col-3"></div>
             </div>
         
         </div>

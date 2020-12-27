@@ -4,69 +4,195 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <style>
-   
-        .auto-style1 {
-            font-size: large;
-        }
-   
-    </style>
     <title></title>
-    <link href="Bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+
+    <style>
+        .vertical-nav {
+            min-width: 17rem;
+            width: 17rem;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s;
+        }
+
+        .page-content {
+            width: calc(100% - 17rem);
+            margin-left: 17rem;
+            transition: all 0.4s;
+        }
+
+        /* for toggle behavior */
+
+        #sidebar.active {
+            margin-left: -17rem;
+        }
+
+        #content.active {
+            width: 100%;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            #sidebar {
+                margin-left: -17rem;
+            }
+
+                #sidebar.active {
+                    margin-left: 0;
+                }
+
+            #content {
+                width: 100%;
+                margin: 0;
+            }
+
+                #content.active {
+                    margin-left: 17rem;
+                    width: calc(100% - 17rem);
+                }
+        }
+
+       
+
+        body {
+            background: #599fd9;
+            background: -webkit-linear-gradient(to right, #599fd9, #c2e59c);
+            background: linear-gradient(to right, #599fd9, #c2e59c);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .separator {
+            margin: 3rem 0;
+            border-bottom: 1px dashed #fff;
+        }
+
+        .text-uppercase {
+            letter-spacing: 0.1em;
+        }
+
+        .text-gray {
+            color: #aaa;
+        }
+        
+    </style>
+    <script>
+        $(function () {
+            // Sidebar toggle behavior
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar, #content').toggleClass('active');
+            });
+        });
+
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
-       <div style="height: 150px; width: 700px; margin-left: 300px;" >
-           <asp:Image ID="Image1" runat="server" Height="150px" Width="700px" ImageUrl="~/Resimler/admin.jpg" />
-       </div>
-            
-        
+        <div class="vertical-nav bg-light" id="sidebar">
+            <div class="py-4 px-3 mb-4 bg-light">
+                <div class="media d-flex align-items-center">
+                    <asp:Image ID="Image1" runat="server" ImageUrl="/Logo/foto.jpg" CssClass="mr-3 rounded-circle img-thumbnail shadow-sm" Width="55px" Height="55px" />
 
-        
-        <div class="container-fluid" style="margin-top:50px;">
-            <div class="row">
-                <div class="col-3">
-                    
-                    <div class="list-group" style="margin-top:50px;">
- 
-  
-                        <div class=" list-group-item list-group-item-action text-center">
-                            <strong><span class="auto-style1">MENÜLER</span></strong></div>
-                      
- <a href="#" class="list-group-item list-group-item-action">KATEGORİLER</a>
-  <a href="#" class="list-group-item list-group-item-action">YEMEKLER</a>
-  <a href="#" class="list-group-item list-group-item-action">YORUMLAR</a>
-                         <a href="#" class="list-group-item list-group-item-action">MESAJLAR</a>
-                         <a href="#" class="list-group-item list-group-item-action">GÜNÜN YEMEĞİ</a>
-                         <a href="#" class="list-group-item list-group-item-action">TARİFLER</a>
-                         <a href="#" class="list-group-item list-group-item-action">HAKKIMIZDA</a>
-</div>
-                    
+                    <div class="media-body">
+                        <h4 class="m-0">Fatma Cafrı</h4>
+                        <p class="font-weight-light text-muted mb-0">Web developer</p>
                     </div>
-                <div class="col-9" style="  background-color:black;">er</div>
+                </div>
             </div>
+
+            <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">MENÜLER</p>
+
+            <ul class="nav flex-column bg-white mb-0">
+                <li class="nav-item">
+                    <a href="Kategoriler.aspx" class="nav-link text-dark font-italic bg-light">
+                        <i class="fa fa-chevron-right mr-3 text-primary fa-fw"></i>
+                        Kategoriler
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="Yemekler.aspx" class="nav-link text-dark font-italic bg-light">
+                        <i class="fa fa-chevron-right mr-3 text-primary fa-fw"></i>
+                        Yemekler
+                    </a>
+                </li>
+               
+                <li class="nav-item">
+                    <a href="Tarifler.aspx" class="nav-link text-dark font-italic bg-light">
+                        <i class="fa fa-chevron-right mr-3 text-primary fa-fw"></i>
+                        Gelen Tarifler
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="Yorumlar.aspx" class="nav-link text-dark font-italic bg-light">
+                        <i class="fa fa-chevron-right mr-3 text-primary fa-fw"></i>
+                        Yorumlar
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="Mesajlar.aspx" class="nav-link text-dark font-italic bg-light">
+                        <i class="fa fa-chevron-right mr-3 text-primary fa-fw"></i>
+                        Mesajlar
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="HakkimizdaAdmin.aspx" class="nav-link text-dark font-italic bg-light">
+                        <i class="fa fa-chevron-right mr-3 text-primary fa-fw"></i>
+                        Hakkımızda
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="Anasayfa.aspx" class="nav-link text-dark font-italic bg-light">
+                        <i class="fa fa-chevron-right mr-3 text-primary fa-fw"></i>
+                        Çıkış
+                    </a>
+                </li>
+            </ul>
         </div>
 
 
-        
+        <!-- Page content holder -->
+        <div class="page-content p-5" id="content">
+            <!-- Toggle button -->
+
+            <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">AÇ/KAPAT</small></button>
+
+           <%--<div class="separator"></div>--%>
+            <div class="row">
+                 
+                <div class="col-lg-5">
+
+                    <div <%--class="bg-white p-0 rounded my-5 shadow-sm"--%>>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+
+                </div>
+                 
+                 <div class="col-lg-1"></div>
+
+                <div class="col-lg-5">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>
+                         </div>
+                 <div class="col-lg-1"></div>
+            </div>
+                <%--<div class="col-lg-2"></div>--%>
+            </div>
+<%--<div class="bg-white  rounded my-5 shadow-sm"> </div>--%>
+                    
+       
 
 
-
-
-
-
-        <%--<div>--%>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-       <%-- </div>--%>
     </form>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 </body>
 </html>
